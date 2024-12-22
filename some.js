@@ -1,8 +1,1 @@
-
-let person = {
-    name: 'mosh',
-    age: 30
-
-};
-
-console.log(person)
+console.log(23+97)
