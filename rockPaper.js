@@ -3,32 +3,32 @@ function getRandomInt(max) {
   }
 function playRound(humanChoice, computerChoice) {
     // your code here!
-    if (humanChoice == "rock" && computerChoice == "paper"){
+    if (humanChoice === "rock" && computerChoice === "paper"){
         console.log("computer won")
         compScore +=1;
 
     }
-    else if( humanChoice == "rock" && computerChoice == "sciscor"){
+    else if( humanChoice === "rock" && computerChoice === "sciscor"){
         console.log("human won")
         humanScore += 1; 
     }
-    else if( humanChoice == "paper" && computerChoice == "rock"){
+    else if( humanChoice === "paper" && computerChoice === "rock"){
         console.log("human won")
         humanScore += 1; 
     }
-    else if( humanChoice == "paper" && computerChoice == "sciscor"){
+    else if( humanChoice === "paper" && computerChoice === "sciscor"){
         console.log("computer won")
         compScore +=1;
     }
-    else if( humanChoice == "sciscor" && computerChoice == "paper"){
+    else if( humanChoice === "sciscor" && computerChoice === "paper"){
         console.log("human won")
         humanScore += 1; 
    }
-   else if( humanChoice == "sciscor" && computerChoice == "rock"){
+   else if( humanChoice === "sciscor" && computerChoice === "rock"){
         console.log("computer won")
         compScore +=1;
    }
-   else if(humanChoice == computerChoice){
+   else if(humanChoice === computerChoice){
         console.log("no one wins")
    }
    console.log(`human score: ${humanScore} , computer score: ${compScore}`)
