@@ -22,6 +22,7 @@ function playRound(humanChoice, computerChoice) {
    else if( humanChoice = "sciscor" && computerChoice == "rock"){
         console.log("computer won")
    }
+   
 
 }
 const humanSelection = getHumanChoice();
