@@ -4,28 +4,28 @@ function getRandomInt(max) {
 function playRound(humanChoice, computerChoice) {
     // your code here!
     if (humanChoice === "rock" && computerChoice === "paper"){
-        console.log("computer won")
+        result.textContent ="computer won";
         compScore +=1;
 
     }
     else if( humanChoice === "rock" && computerChoice === "sciscor"){
-        console.log("human won")
+        result.textContent = "human won";
         humanScore += 1; 
     }
     else if( humanChoice === "paper" && computerChoice === "rock"){
-        console.log("human won")
+        result.textContent = "human won";
         humanScore += 1; 
     }
     else if( humanChoice === "paper" && computerChoice === "sciscor"){
-        console.log("computer won")
+        result.textContent ="computer won";
         compScore +=1;
     }
     else if( humanChoice === "sciscor" && computerChoice === "paper"){
-        console.log("human won")
+        result.textContent = "human won";
         humanScore += 1; 
    }
    else if( humanChoice === "sciscor" && computerChoice === "rock"){
-        console.log("computer won")
+        result.textContent ="computer won";
         compScore +=1;
    }
    else if(humanChoice === computerChoice){
@@ -35,15 +35,14 @@ function playRound(humanChoice, computerChoice) {
    
 
 }
-const humanSelection =0;
-const computerSelection = 0;
+
 var humanScore = 0;
 var compScore = 0;  
 function playGame(){
     for(let i =0; i < 5; i++){
         
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
+        var humanSelection = getHumanChoice();
+        var computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
         
 
@@ -55,7 +54,7 @@ function playGame(){
 
 }
     
-playGame()
+
 function getHumanChoice(){
     r = parseInt(prompt(" choose a number 0-2  0 = rock, 1 = paper, 2 = scissers" ))
     
@@ -82,18 +81,41 @@ function getComputerChoice() {
     f = "";
     if (r == 0){
         f = "rock"
-        console.log(f);
+        compScreen.textContent = f
         
 
     }
     else if(r == 1){
         f = "paper";
-        console.log(f);
+        compScreen.textContent = f
     }
     else if(r == 2){
         f = "sciscor"
-        console.log(f);
+        compScreen.textContent = f
     }
     return f
 
+}
+
+let result = document.querySelector(".result_screen");
+let compScreen = document.querySelector(".computerChoice");
+
+function when_clicked_Rock (){
+      
+    humanSelection = "rock"
+    computerSelection = getComputerChoice()
+    playRound(humanSelection,computerSelection)
+
+
+
+}
+function when_clicked_paper(){
+    humanSelection = "paper"
+    computerSelection = getComputerChoice()
+    playRound(humanSelection,computerSelection)
+}
+function when_clicked_scissor(){
+    humanSelection = "sciscor"
+    computerSelection = getComputerChoice()
+    playRound()
 }
