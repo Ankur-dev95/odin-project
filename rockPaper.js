@@ -3,6 +3,9 @@ function getRandomInt(max) {
   }
 function playRound(humanChoice, computerChoice) {
     // your code here!
+    const result = document.querySelector(".result");
+    const computerChoic1 = document.querySelector(".computerChoic");
+    const score = document.querySelector(".score");
     if (humanChoice === "rock" && computerChoice === "paper"){
         result.textContent ="computer won";
         compScore +=1;
@@ -30,92 +33,50 @@ function playRound(humanChoice, computerChoice) {
    }
    else if(humanChoice === computerChoice){
         console.log("no one wins")
+        result.textContent = "no one wins";
    }
+  
    console.log(`human score: ${humanScore} , computer score: ${compScore}`)
-   
+   computerChoic1.textContent = "computer choice: " + computerChoice;
+   score.textContent = `human score: ${humanScore} , computer score: ${compScore}`;
 
 }
 
 var humanScore = 0;
-var compScore = 0;  
-function playGame(){
-    for(let i =0; i < 5; i++){
-        
-        var humanSelection = getHumanChoice();
-        var computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-        
+var compScore = 0; 
 
+var humanSelection = "";
+var computerSelection = "";
+
+function get_computer_choice(){
+    f = getRandomInt(3);
+    if (f === 0){
+        computerSelection = "rock"
 
     }
-    if( humanScore > compScore){
-        console.log("human wins");
+    else if( f === 1){
+        computerSelection = "paper"
+
+    }
+    else if( f === 2){
+        computerSelection = "sciscor"
     }
 
 }
-    
 
-function getHumanChoice(){
-    r = parseInt(prompt(" choose a number 0-2  0 = rock, 1 = paper, 2 = scissers" ))
-    
-    f = "";
-    if (r == 0){
-        f = "rock"
-        console.log(f);
-        
 
-    }
-    else if(r == 1){
-        f = "paper";
-        console.log(f);
-    }
-    else if(r == 2){
-        f = "sciscor"
-        console.log(f);
-    }
-    return f
-}
-  
-function getComputerChoice() {
-    r = getRandomInt(3);
-    f = "";
-    if (r == 0){
-        f = "rock"
-        compScreen.textContent = f
-        
-
-    }
-    else if(r == 1){
-        f = "paper";
-        compScreen.textContent = f
-    }
-    else if(r == 2){
-        f = "sciscor"
-        compScreen.textContent = f
-    }
-    return f
-
+function when_clicked_rock(){
+    humanSelection = "rock";
+    return humanSelection
 }
 
-let result = document.querySelector(".result_screen");
-let compScreen = document.querySelector(".computerChoice");
-
-function when_clicked_Rock (){
-      
-    humanSelection = "rock"
-    computerSelection = getComputerChoice()
-    playRound(humanSelection,computerSelection)
-
-
-
-}
 function when_clicked_paper(){
-    humanSelection = "paper"
-    computerSelection = getComputerChoice()
-    playRound(humanSelection,computerSelection)
+   humanSelection = "paper"
+    return humanSelection
 }
 function when_clicked_scissor(){
     humanSelection = "sciscor"
-    computerSelection = getComputerChoice()
-    playRound()
+
+    return humanSelection
 }
+
