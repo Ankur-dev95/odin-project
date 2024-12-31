@@ -38,14 +38,10 @@ let screen = "";
 let v = document.querySelector(".screen1");
 v.textContent = screen;
 function getFirstNum(){
-    while(sign != "+" || "-" || "*" || "*" ){
+    ///when you press a opperator use this function 
 
-        num1 = screen;
-
-        
-
-    } 
-    screen = ""
+    num1 = screen;
+    screen = ";"
 
 }
 function getSecondNum(){
