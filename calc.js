@@ -60,7 +60,7 @@ function getFirstNum(){
     ///when you press a opperator use this function 
 
     num1 = screen;
-    storeScreen = screen;
+    
     storeScreen += sign;
     screen = ""
 
